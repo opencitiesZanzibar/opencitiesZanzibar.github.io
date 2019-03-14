@@ -17,5 +17,5 @@ Images available for download on the OpenAerialMap website (https://openaerialma
 2.Household Survey
 Raw csv results of the household survey are available for downloading on the master branch.
 
-3.Other datasets
+3.Other datasets (datasets.zip)
 Waterpoints, dumping sites, Open spaces, landmarks, bus stop data are all available for download in zipped shapefile format. The CRS used is WGS84 EPSG:4326.
