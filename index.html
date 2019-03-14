@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open Cities </title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/ocMap.css"/>
+    <link rel="stylesheet" href="./css/styles/leaflet-sidebar.css"/>
+    <link rel="stylesheet" href="./css/styles/leaflet.awesome-markers.css"/>
+
+<script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="./js/scripts/underscore.js"></script>
+<script type="text/javascript" src="./js/scripts/d3.v3.js"></script>
+<script type="text/javascript" src="./js/scripts/d3pie.js"></script>
+<script src="./js/scripts/dimple.v2.2.0.min.js"></script> 
+</head>
+
+<body id="body">
+
+<div id="sidebar" class="leaflet-sidebar ">
+	<div class="leaflet-sidebar-content">
+    <br>
+    <p class="lorem">To view the results of the household survey, select a shehia then click on one of the four question categories to view the results. </p>
+    <div class="dropdown">
+  		<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select a shehia</a>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			    <a id="kikwajuniB" class="dropdown-item" href="#">Kikwajuni Bondeni</a>
+			    <a id="allShehias" class="dropdown-item" href="#">All shehias</a>
+			    <a id="Kisiwandui" class="dropdown-item" href="#">Kisiwandui</a>
+			    <a id="kisimaMaji" class="dropdown-item" href="#">Kisima Majingoo</a>
+			    <a id="Muembeshau" class="dropdown-item" href="#">Muembeshauri</a>
+			    <a id="Kwaalinatu" class="dropdown-item" href="#">Kwaalinatu</a>
+			    <a id="kikwajuniJ" class="dropdown-item" href="#">Kikwajuni Juu</a>
+  			</div>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="exampleRadios" id="qn1" value="option1">
+			<label class="form-check-label" for="qn1">
+			   Building properties
+			</label>
+		</div>
+		<div class="form-check">
+  			<input class="form-check-input" type="radio" name="exampleRadios" id="qn2" value="option2">
+  			<label class="form-check-label" for="qn2" >
+    			Flooding
+  			</label>
+		</div> 
+		<div class="form-check">
+  			<input class="form-check-input" type="radio" name="exampleRadios" id="qn3" value="option3">
+  			<label class="form-check-label" for="qn3">
+    			Waste and Mobility
+  			</label>
+		</div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="qn4" value="option4">
+        <label class="form-check-label" for="qn4">
+          Improvements wishlist
+        </label>
+    </div>
+    <br>
+		<div class="collaps" id="collapseExample">
+  			<div class="card card-body">
+          <p>Open Cities Africa, is an initiative carried out in 10 cities in Sub-Saharan Africa, to engage local government, civil society, and the private sector to develop the information infrastructures necessary to meet 21st century urban resilience challenges.Zanzibar City, one of the beneficiary cities, is a rapidly growing densely populated urban area with significant threat of flooding.Lack of critical geospatial data in Zanzibar however, hampers efforts of relevant bodies towards this disaster risk management.</p>
+          <p>Various data generation efforts were done inorder to address this lack of data including digitization of buildings and roads from 7cm drone imagery, household surveys using mobile phones and GPS data collection in 6 shehias (administrative areas) within the city identified as being at risk. </p>
+          <p>This map was developed from all the generated datasets as a tool to assist key stakeholders to utilize data in addressing natural disaster risk in the Zanzibar city.</p>
+          <img src="./img/ocLogo.png" class="rounded" alt="" width="300" height="80" style="align-self: center;"> 
+  			</div>
+		</div>
+    </div>
+</div>
+<div id="map"class="map"></div>
+
+
+<script type="text/javascript" src="./js/scripts/leaflet-1.0.3.js"/></script><!--js leaflet source code-->
+<script type="text/javascript" src="./js/scripts/proj4-compressed.js"/></script><!--js proj4 source code-->
+<script type="text/javascript" src="./js/scripts/proj4leaflet.js"/></script><!--js proj4leaflet source code-->
+<script type="text/javascript" src="./js/scripts/leaflet-sidebar.js"/></script><!--js proj4leaflet source code-->
+<script type="text/javascript" src="./js/scripts/leaflet.awesome-markers.js"/></script><!--js leaflet markers source code-->
+
+<script type="text/javascript" src="./js/source/oc/hh_survey.js"/></script><!--js survey source code-->
+<script type="text/javascript" src="./js/source/oc/bus_Stop.js"/></script><!--js bus stop source code-->
+<script type="text/javascript" src="./js/source/oc/openspaces.js"/></script><!--js openspaces source code-->
+<script type="text/javascript" src="./js/source/oc/dumpsites.js"/></script><!--js dumpsites source code-->
+<script type="text/javascript" src="./js/source/oc/poi.js"/></script><!--js poi source code-->
+<script type="text/javascript" src="./js/source/oc/waterpoints.js"/></script><!--js waterpoints source code-->
+<script type="text/javascript" src="./js/source/oc/shehias.js"/></script><!--js shehias source code-->
+<script type="text/javascript" src="./js/ocMap1.js"/></script><!--js source source code-->
+
+<!--bootstrap code-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style type="text/css">
+#dropdownMenuLink, .form-check{
+  margin-left:10px;
+}
+#dropdownMenuLink{
+  color: #ffffff;
+}
+</style>
+</body>
+</html>
