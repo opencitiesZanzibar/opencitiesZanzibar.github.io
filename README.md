@@ -1,5 +1,6 @@
 # opencitiesZanzibar.github.io
-https://opencitieszanzibar.github.io
+
+Interactive map URL: https://opencitieszanzibar.github.io
 
 Overview
 
