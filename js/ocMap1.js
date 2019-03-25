@@ -626,7 +626,7 @@ var overlays = {
         };
 var basemaps = {
             
-            "Satellite":ZMImagelayer,
+            "ZMI Image":ZMImagelayer,
             "OpenStreetMap":osmlayer
         };
 
