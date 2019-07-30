@@ -1,7 +1,7 @@
 
 var map = new L.map('map',{ zoomControl: false }).setView([-6.168513, 39.202311], 16 );
 
-map.setMaxBounds(map.getBounds());
+//map.setMaxBounds(map.getBounds());
 
 var ZMImagelayer = L.tileLayer('https://tiles.openaerialmap.org/5ae38a540b093000130afe39/0/5ae38a540b093000130afe3a/{z}/{x}/{y}.png',{ errorTileUrl:"not working"}).addTo(map);
 var osmlayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
