@@ -630,4 +630,4 @@ var basemaps = {
             "OpenStreetMap":osmlayer
         };
 
-L.control.layers(overlays,basemaps,{position:'topleft'}).addTo(map);
+L.control.layers(overlays,basemaps,{position:'topright'}).addTo(map);
