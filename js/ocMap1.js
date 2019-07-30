@@ -629,5 +629,5 @@ var basemaps = {
             "ZMI Image":ZMImagelayer,
             "OpenStreetMap":osmlayer
         };
-L.Control.zoom({ position: 'topright' }).addTo(map);
+L.control.zoom({ position: 'topright' }).addTo(map);
 L.control.layers(overlays,basemaps,{position:'topright'}).addTo(map);
