@@ -1,5 +1,5 @@
 
-var map = new L.map('map',{ zoomControl: false }).setView([-6.168513, 39.204511], 16 );
+var map = new L.map('map',{ zoomControl: false }).setView([-6.168513, 39.204011], 16 );
 
 //map.setMaxBounds(map.getBounds());
 
