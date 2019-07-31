@@ -34,6 +34,18 @@
         margin-right: 8px;
         opacity: 0.7;
     }
+    #heading{
+        font-size: 30px;
+        font-family: "Lucida Console", Monaco, monospace;
+        z-index: 1000;
+        position: absolute;
+        width: 65%;
+        height: 8%;
+        background-color: #ebfffe;
+        color: #008c4d;
+        margin-left: 22%;
+        margin-top: 0.5%;
+    }
 
 .sub1, .sub2 { display: none; }
 
