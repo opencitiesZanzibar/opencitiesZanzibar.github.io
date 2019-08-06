@@ -39,7 +39,6 @@
         font-family: "Lucida Console", Monaco, monospace;
         z-index: 1000;
         position: absolute;
-        width: 60%;
         background-color: rgba(255, 255, 255, 0.95);
         margin-left: 1%;
         margin-top: 0.5%;
